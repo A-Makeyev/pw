@@ -1,11 +1,23 @@
 {
-  "dependencies": {
-    "dotenv": "^17.2.3",
-    "playwright": "^1.56.1"
+  "name": "playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "pnpm playwright test HomePage.spec.js --project=chromium && pnpm allure serve allure-results",
+    "test-register": "pnpm playwright test Register.spec.js --project=chromium",
+    "test-login": "pnpm playwright test Login.spec.js --project=chromium"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "devDependencies": {
-    "@playwright/test": "^1.56.1",
-    "@types/node": "^24.10.0"
+    "@playwright/test": "^1.46.1",
+    "@types/node": "^22.5.0",
+    "allure": "^3.0.1",
+    "allure-playwright": "^3.4.5"
   },
-  "scripts": {}
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  }
 }
