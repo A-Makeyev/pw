@@ -17,6 +17,13 @@ jobs:
             - name: Run Playwright tests
               run: npx playwright test HomePage.spec.js
 
+            - name: Upload Playwright Test Report
+              uses: actions/checkout@v2
+              continue-on-error: true
+              with:
+                ref: gh-pages
+                path: gh-pages
+            
             - name: Allure report action from marketplace
               uses: simple-elf/allure-report-action@master
               id: allureReport
@@ -28,7 +35,7 @@ jobs:
 
             - name: Deploy Allure Report to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
-              with:
-                github_token: ${{ secrets.GITHUB_TOKEN }}
-                publish_branch: gh-pages
-                publish_dir: 'allure-report'
+              env:
+                PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+                PUBLISH_BRANCH: gh-pages
+                PUBLISH_DIR: allure-history
