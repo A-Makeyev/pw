@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "pnpm playwright test HomePage.spec.js --project=chromium && pnpm allure serve allure-results",
-    "test-register": "pnpm playwright test Register.spec.js --project=chromium",
-    "test-login": "pnpm playwright test Login.spec.js --project=chromium"
+    "test": "npx playwright test HomePage.spec.js --project=chromium && npx allure serve allure-results",
+    "test-register": "npx playwright test Register.spec.js --project=chromium",
+    "test-login": "npx playwright test Login.spec.js --project=chromium"
   },
   "keywords": [],
   "author": "",
